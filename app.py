@@ -202,7 +202,7 @@ q1_low = low_summary['Low_Engagement_Count'].quantile(0.5)
 q3_low = low_summary['Low_Engagement_Count'].quantile(0.75)
 
 # Apply styling
-styled_low = low_summary.style.applymap(
+styled_low = low_summary.style.map(
     lambda x: color_scale(x, q1_low, q3_low),
     subset=['Low_Engagement_Count']
 )
@@ -233,7 +233,7 @@ q1_pr = priority_df['PriorityScore'].quantile(0.5)
 q3_pr = priority_df['PriorityScore'].quantile(0.75)
 
 # Apply styling
-styled_priority = priority_df.style.applymap(
+styled_priority = priority_df.style.map(
     lambda x: color_scale(x, q1_pr, q3_pr),
     subset=['PriorityScore']
 )
